@@ -1,12 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../src/components/app.css'
+import { Game } from './Game';
 
 
 
-export const App = () => {
-  return (
-    <div>
-      <h1>Saquenme de Latinoamerica!</h1>
-    </div>
-  )
+export const StarMatch = () => {
+	const [gameId, setGameId] = useState(1);
+	return <Game key={gameId} startNewGame={() => setGameId(gameId + 1)}/>;
 }
+
+
