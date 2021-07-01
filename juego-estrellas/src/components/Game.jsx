@@ -1,9 +1,9 @@
 import React from 'react'
-import { utils } from './components/helpers/utils';
-import { PlayAgain } from './components/PlayAgain';
-import { PlayNumber } from './components/PlayNumber';
-import { StarsDisplay } from './components/StarsDisplay';
-import { useGameState } from './components/UseGameState';
+import { utils } from './helpers/utils';
+import { PlayAgain } from './PlayAgain';
+import { PlayNumber } from './PlayNumber';
+import { StarsDisplay } from './StarsDisplay';
+import { useGameState } from './UseGameState';
 
 
 
@@ -19,7 +19,7 @@ export const Game = props => {
     const candidatesAreWrong = utils.sum(candidateNums) > stars;
     const gameStatus = availableNums.length === 0 
         ? 'won'
-      : secondsLeft === 0 ? 'lost' : 'active'
+      : secondsLeft === 0 ? props.setEstaLogueado(false) : 'active'
   
     const numberStatus = number => {
       if (!availableNums.includes(number)) {
